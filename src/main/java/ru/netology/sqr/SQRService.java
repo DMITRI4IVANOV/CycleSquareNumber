@@ -1,13 +1,19 @@
 package ru.netology.sqr;
 
 public class SQRService {
-    public static void main(String[] args) {
-        for (int i = 10;i <= 99; i ++) {
-            // int j = i * i;
-            if ( i * i >= 200 && i * i <=300) {
-                System.out.println("Квадратный корень из числа " + i);
+    // Количество квадратов
+    public int calcSqrt(int min, int max) {
+        int count = 0;
+        for (int i = 10; i <= 99; i++) {
+            int sqrt = i * i;
+            if (sqrt < min) {
+                continue;
             }
+            if (sqrt > max) {
+                continue;
+            }
+            count ++;
         }
-        System.out.println("Вы вышли из цикла");
+        return count;
     }
 }
